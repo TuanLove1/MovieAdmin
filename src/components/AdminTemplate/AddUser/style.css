@@ -1,0 +1,12 @@
+table,
+th,
+td {
+    border: 1px solid #96D4D4;
+    padding: 2px;
+}
+.table__user{
+    width: 100%;
+}
+td{
+    font-size: 13px;
+}
