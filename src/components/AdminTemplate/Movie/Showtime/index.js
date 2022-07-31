@@ -6,9 +6,11 @@ import { useNavigate, useParams } from 'react-router-dom';
 import withReactContent from 'sweetalert2-react-content';
 import Swal from 'sweetalert2';
 import * as yup from 'yup';
+import "./style.css"
 
 
 import moment from 'moment';
+import { CustomCard } from '@tsamantanis/react-glassmorphism';
 export default function (props) {
     const navigate = useNavigate();
     const params = useParams();
@@ -106,42 +108,52 @@ export default function (props) {
         })
     }
     return (
-        <Form onSubmitCapture={formik.handleSubmit}
-            name="basic"
-            labelCol={{ span: 3 }}
-            wrapperCol={{ span: 10 }}
-            initialValues={{ remember: true }}
+        <div>
+            <CustomCard className="form_mobile" style={{padding:'100px 150px'}}
+                effectColor='rgba(54, 215, 183, 1)' // required
+                color="#14AEFF" // default color is white
+                blur={2} // default blur value is 10px
+                borderRadius={0} // default border radius value is 10px
+            >
+                <Form onSubmitCapture={formik.handleSubmit}
+                    name="basic"
+                    labelCol={{ span: 3 }}
+                    wrapperCol={{ span: 10 }}
+                    initialValues={{ remember: true }}
 
-        >
-            <h1>Tạo lịch chiếu</h1>
-            <Form.Item
-                label="Hệ thống rạp"
-            >
-                <Select options={handleOptionHtr()} onChange={handleChangeHtr} placeholder='Hệ thống rạp' />
-            </Form.Item>
-            <Form.Item
-                label="Cụm rạp"
-            >
-                <Select options={handleOptionCumRap()} onChange={handleChangeCumRap} placeholder='Chọn cụm rạp' />
-            </Form.Item>
-            <Form.Item
-                label="Lịch chiếu"
-            >
-                <DatePicker format="DD/MM/YYYY hh:mm:ss" showTime onChange={onChangeDate} onOk={onOk} />
-                <div className='text-danger'>{formik.errors.ngayChieuGioChieu}</div>
+                >
+                    <h1 style={{color:'white'}}>Tạo lịch chiếu</h1>
+                    <Form.Item
+                        label="Hệ thống rạp"
+                    >
+                        <Select options={handleOptionHtr()} onChange={handleChangeHtr} placeholder='Hệ thống rạp' />
+                    </Form.Item>
+                    <Form.Item
+                        label="Cụm rạp"
+                    >
+                        <Select options={handleOptionCumRap()} onChange={handleChangeCumRap} placeholder='Chọn cụm rạp' />
+                    </Form.Item>
+                    <Form.Item
+                        label="Lịch chiếu"
+                    >
+                        <DatePicker format="DD/MM/YYYY hh:mm:ss" showTime onChange={onChangeDate} onOk={onOk} />
+                        <div className='text-danger'>{formik.errors.ngayChieuGioChieu}</div>
 
-            </Form.Item>
-            <Form.Item
-                label="Giá vé"
-            >
-                <InputNumber min={80000} onChange={onChangePrice} />
+                    </Form.Item>
+                    <Form.Item
+                        label="Giá vé"
+                    >
+                        <InputNumber min={80000} onChange={onChangePrice} />
 
-            </Form.Item>
-            <Form.Item
-                label="Chức năng"
-            >
-                <Button htmlType='submit'>Tạo lịch chiếu</Button>
-            </Form.Item>
-        </Form>
+                    </Form.Item>
+                    <Form.Item
+                        label="Chức năng"
+                    >
+                        <Button htmlType='submit'>Tạo lịch chiếu</Button>
+                    </Form.Item>
+                </Form>
+            </CustomCard>
+        </div>
+
     )
 }

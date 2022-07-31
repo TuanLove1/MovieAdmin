@@ -15,34 +15,41 @@ export const mainNavbarItems = [
         label: 'Movie',
         router: 'movie',
     },
+    
     {
         id: 2,
-        icon: <SettingsIcon />,
-        label: 'Dashboard',
-        router: 'dash-board',
-    },
-    {
-        id: 3,
         icon: <LogoutIcon/>,
         label: 'Log out',
         router: 'log-out',
     },
     {
-        id: 4,
+        id: 3,
         icon: '',
         label: '',
         router: 'edit-movie',
     },
     {
-        id: 5,
+        id: 4,
         icon: '',
         label: '',
         router: 'add-movie',
     },
     {
-        id: 6,
+        id: 5,
         icon: '',
         label: '',
         router: 'show-time',
+    },
+    {
+        id: 6,
+        icon: '',
+        label: '',
+        router: 'add-user',
+    },
+    {
+        id: 7,
+        icon: '',
+        label: '',
+        router: 'edit-user',
     },
 ]

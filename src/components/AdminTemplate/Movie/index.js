@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import { GridLoader } from 'react-spinners';
 import { FetchDataDeleteMovie } from './DeleteMovie/actions';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import { CustomCard } from '@tsamantanis/react-glassmorphism';
 export default function Movie() {
   let navigate = useNavigate();
   const dispatch = useDispatch();
@@ -105,12 +106,19 @@ export default function Movie() {
       <div className='grid wide'>
         <div className='row'>
           <div className='col l-12'>
-            <h1 className='text-center'>Quản lý phim</h1>
-            <Button onClick={() => {
-              navigate(`/admin/add-movie`)
-            }} className='mb-2' variant="contained">Thêm phim</Button>
-            <Search className='mb-2' placeholder="Tìm kiếm" onSearch={onSearch} enterButton />
-            <Table columns={columns} dataSource={data} onChange={onChange} rowKey={'maPhim'} />
+            <CustomCard className="form_mobile"
+              effectColor='rgba(54, 215, 183, 1)' // required
+              color="#14AEFF" // default color is white
+              blur={5} // default blur value is 10px
+              borderRadius={0} // default border radius value is 10px
+            >
+              <h1 style={{ color: 'white' }} className='text-center'>Quản lý phim</h1>
+              <Button onClick={() => {
+                navigate(`/admin/add-movie`)
+              }} className='mb-2' variant="contained">Thêm phim</Button>
+              <Search className='mb-2' placeholder="Tìm kiếm" onSearch={onSearch} enterButton />
+              <Table columns={columns} dataSource={data} onChange={onChange} rowKey={'maPhim'} />
+            </CustomCard>
           </div>
         </div>
       </div>

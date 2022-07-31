@@ -34,7 +34,7 @@ function Auth(props) {
   if (value.loading)
     return <GridLoader color='rgba(54, 215, 183, 1)' />
   if (localStorage.getItem("user"))
-    return <Navigate replace to="/admin" />;
+    return <Navigate replace to="/admin/movie" />;
   const renderNoti = () => {
     return (
       value.error && (

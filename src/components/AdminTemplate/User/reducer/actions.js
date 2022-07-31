@@ -4,7 +4,7 @@ import { api } from '../../../../api/apiUtil';
 export const fectDataListUser = (param) => {
     return (dispatch) => {
         dispatch(actListUserRequest());
-        api.get(`https://movienew.cybersoft.edu.vn/api/QuanLyNguoiDung/TimKiemNguoiDungPhanTrang?MaNhom=GP10&${param}&soPhanTuTrenTrang=10`)
+        api.get(`QuanLyNguoiDung/TimKiemNguoiDungPhanTrang?MaNhom=GP10&${param}&soPhanTuTrenTrang=10`)
             .then((result) => {
                 dispatch(actListUserSuccess(result.data.content))
             })

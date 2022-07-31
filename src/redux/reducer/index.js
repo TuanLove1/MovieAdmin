@@ -5,7 +5,10 @@ import addMovieReducer from "../../components/AdminTemplate/Movie/AddMovie/reduc
 import infoMovieReducer from "../../components/AdminTemplate/Movie/EditMovie/reducer";
 import updateMovieReducer from "../../components/AdminTemplate/Movie/AddMovie/UpdateMovie/reducer";
 import deleteMovieReducer from "../../components/AdminTemplate/Movie/DeleteMovie";
-import listUserReducer from "../../components/AdminTemplate/AddUser/reducer";
+import listUserReducer from "../../components/AdminTemplate/User/reducer";
+import addUserReducer from "../../components/AdminTemplate/User/AddUser/reducer";
+import editUserReducer from "../../components/AdminTemplate/User/EditUser/reducer"
+import deleteUserReducer from "../../components/AdminTemplate/User/DeleteUser"
 const rootReducer = combineReducers({
     loginMovieReducer,
     ListMovieAdminReducer,
@@ -13,7 +16,10 @@ const rootReducer = combineReducers({
     infoMovieReducer,
     updateMovieReducer,
     deleteMovieReducer,
-    listUserReducer
+    listUserReducer,
+    addUserReducer,
+    editUserReducer,
+    deleteUserReducer
 });
 
 export default rootReducer;
