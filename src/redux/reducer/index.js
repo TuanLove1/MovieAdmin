@@ -9,6 +9,8 @@ import listUserReducer from "../../components/AdminTemplate/User/reducer";
 import addUserReducer from "../../components/AdminTemplate/User/AddUser/reducer";
 import editUserReducer from "../../components/AdminTemplate/User/EditUser/reducer"
 import deleteUserReducer from "../../components/AdminTemplate/User/DeleteUser"
+import updateUserReducer from "../../components/AdminTemplate/User/Update";
+import searchUserReducer from "../../components/AdminTemplate/User/SearchUser"
 const rootReducer = combineReducers({
     loginMovieReducer,
     ListMovieAdminReducer,
@@ -19,7 +21,9 @@ const rootReducer = combineReducers({
     listUserReducer,
     addUserReducer,
     editUserReducer,
-    deleteUserReducer
+    deleteUserReducer,
+    updateUserReducer,
+    searchUserReducer,
 });
 
 export default rootReducer;
